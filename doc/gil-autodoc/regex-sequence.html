@@ -1,0 +1,190 @@
+<html><head><link rel="stylesheet" type="text/css" href=".css"/>
+  </head>
+  <body><p><b>I do not expect this autodoc to fully work yet!
+      </b>
+      
+    </p>
+    <p><a id="item_name"">package
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defpackage_regex-sequence" id="package_title"">regex-sequence
+      </a>
+      <p id="item_body"">Provides `destructuring-regex`, and using regex on lists of
+ strings, allowing you to get integers marking the positiions, or the strings
+ matches.
+
+NOTE speed could probably be improved with compiler-macros and, more
+ importantly, improving `destructuring-regex`.
+
+NOTE 1) there is cl-ppcre too, how do they compare? Can i make it up to the
+ user which to choose?
+     2) how much does compiling the matchers cost? Can we memoize the
+ results?
+      </p>
+      <p id="item_body""><a id="item_name"">exports 
+        </a>
+        <a href="nil">body
+        </a>
+        , <a href="nil">boring
+        </a>
+        , <a href="nil">c
+        </a>
+        , <a href="nil">cur
+        </a>
+        , <a href="nil">destructuring-regex
+        </a>
+        , <a href="nil">from
+        </a>
+        , <a href="nil">handle-regex
+        </a>
+        , <a href="nil">handle-var
+        </a>
+        , <a href="nil">i
+        </a>
+        , <a href="nil">len
+        </a>
+        , <a href="nil">meh
+        </a>
+        , <a href="nil">pair-subdiv
+        </a>
+        , <a href="nil">reg+var
+        </a>
+        , <a href="nil">reg-list
+        </a>
+        , <a href="nil">regex-list
+        </a>
+        , <a href="nil">regex-subdivide
+        </a>
+        , <a href="nil">regs+vars
+        </a>
+        , <a href="nil">result
+        </a>
+        , <a href="nil">seq
+        </a>
+        , <a href="nil">start
+        </a>
+        , <a href="nil">stop
+        </a>
+        , <a href="nil">subdiv
+        </a>
+        , <a href="nil">to
+        </a>
+        , <a href="nil">with-first
+        </a>
+        
+      </p>
+      <p id="item_body""><a id="minor_item_name"">found in file: 
+        </a>
+        <a href="/home/jasper/lisp-proj/j-basic/src/regex-sequence.lisp">/home/jasper/lisp-proj/j-basic/src/regex-sequence.lisp
+        </a>
+        
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_destructuring-regex" id="fun_title"">destructuring-regex
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(regs+vars string &body body)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Finds the regular expresions in sequence and puts the values in. reg+vars`:
+* if string, just match, ignore any values.
+* Otherwise first element an expression that returns a string, then optionally
+ variables to put the between-matched-and-next/next, string-matched.
+* Any variable can be declared 'boring' by making it :b
+
+TODO (string var) sends the match to var, and just val 
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">regex-sequence
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">meh
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_regex-subdivide" id="fun_title"">regex-subdivide
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(reg-list string &key (start 0) (stop t) (with-first t))
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Uses the regular expressions to subdivide the string.
+ (Trivial combination of `pair-subdiv` and `regex-list`)
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">regex-sequence
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_pair-subdiv" id="fun_name"">pair-subdiv
+        </a>
+        , <a href="defun_regex-list" id="fun_name"">regex-list
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_regex-list" id="fun_title"">regex-list
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(reg-list string &key (start 0) (stop t))
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Makes a list of where it matched, and from where to where. The matches must
+ be after each other. (elements are lists from-to)
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">regex
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">compile-str
+        </a>
+        , <a href="nil">scan-str
+        </a>
+        </br><a href="nil" id="package_name"">regex-sequence
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_regex-list" id="fun_name"">regex-list
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    
+  </body>
+  
+</html>

@@ -1,0 +1,402 @@
+<html><head><link rel="stylesheet" type="text/css" href=".css"/>
+  </head>
+  <body><p><b>I do not expect this autodoc to fully work yet!
+      </b>
+      
+    </p>
+    <p><a id="item_name"">package
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defpackage_j-general" id="package_title"">j-general
+      </a>
+      <p id="item_body"">Some general little additions
+      </p>
+      <p id="item_body""><a id="item_name"">exports 
+        </a>
+        <a href="nil">a
+        </a>
+        , <a href="nil">after
+        </a>
+        , <a href="nil">alist
+        </a>
+        , <a href="nil">alist-fun
+        </a>
+        , <a href="nil">args
+        </a>
+        , <a href="nil">body
+        </a>
+        , <a href="nil">class-plist
+        </a>
+        , <a href="nil">constantly*
+        </a>
+        , <a href="nil">delist
+        </a>
+        , <a href="nil">describe-to-string
+        </a>
+        , <a href="nil">destructuring-lambda
+        </a>
+        , <a href="nil">enlist
+        </a>
+        , <a href="nil">file
+        </a>
+        , <a href="nil">file-extension
+        </a>
+        , <a href="nil">from-homedir
+        </a>
+        , <a href="nil">fun
+        </a>
+        , <a href="nil">i
+        </a>
+        , <a href="nil">ignored
+        </a>
+        , <a href="nil">j
+        </a>
+        , <a href="nil">object
+        </a>
+        , <a href="nil">package-keyword
+        </a>
+        , <a href="nil">path
+        </a>
+        , <a href="nil">plist
+        </a>
+        , <a href="nil">plist-after
+        </a>
+        , <a href="nil">s
+        </a>
+        , <a href="nil">setf-
+        </a>
+        , <a href="nil">str
+        </a>
+        , <a href="nil">sub-path-of
+        </a>
+        , <a href="nil">sym
+        </a>
+        , <a href="nil">v
+        </a>
+        , <a href="nil">val
+        </a>
+        , <a href="nil">value
+        </a>
+        , <a href="nil">var
+        </a>
+        , <a href="nil">vars
+        </a>
+        , <a href="nil">with
+        </a>
+        , <a href="nil">x
+        </a>
+        
+      </p>
+      <p id="item_body""><a id="minor_item_name"">found in file: 
+        </a>
+        <a href="/home/jasper/lisp-proj/j-basic/src/j-general.lisp">/home/jasper/lisp-proj/j-basic/src/j-general.lisp
+        </a>
+        
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_sub-path-of" id="fun_title"">sub-path-of
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(path with)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">j-general
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_sub-path-of" id="fun_name"">sub-path-of
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_file-extension" id="fun_title"">file-extension
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(file)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Gets file extension.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">if-let
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_from-homedir" id="fun_title"">from-homedir
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(str)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Go from home directory.
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_package-keyword" id="fun_title"">package-keyword
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(sym)
+          </b>
+          
+        </p>
+        
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_class-plist" id="fun_title"">class-plist
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(class &rest vars)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">This will make a class instance with the initargs based on the code of given
+ value.
+To see how see the macro `alist`.
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_plist" id="fun_title"">plist
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(&rest vars)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">This will make a plist with the indicating symbols based on the code of given
+ value.
+To see how see the macro `alist`.
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_plist-after" id="fun_title"">plist-after
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(after &rest vars)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">j-general
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_alist-fun" id="fun_name"">alist-fun
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_alist" id="fun_title"">alist
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(&rest vars)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Put in values, this will make a alist with the indicating symbols based on the
+ code of given values.
+
+If the values are variables, the variable name will be given, if it is an
+ s-expression, the first argument is used. `(:a key value)` explicitly sets the
+ key. Otherwise, it produces an (macroexpand-time)error.
+
+If the first argument is a keyword, it will make all the symbols for the plist that
+package. (For instance `:keyword` to turn it into a 'regular' plist)
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">curry
+        </a>
+        </br><a href="nil" id="package_name"">j-general
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_alist-fun" id="fun_name"">alist-fun
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_constantly*" id="fun_title"">constantly*
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(value)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Like `constantly`, except that the output is executed each time.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">with-gensyms
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_destructuring-lambda" id="fun_title"">destructuring-lambda
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(args &body body)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Lambda with a destructuring bind on _first_ argument.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">with-gensyms
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_enlist" id="fun_title"">enlist
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(x)
+          </b>
+          
+        </p>
+        
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_delist" id="fun_title"">delist
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(x)
+          </b>
+          
+        </p>
+        
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_setf-" id="fun_title"">setf-
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(fun set &rest args)
+          </b>
+          
+        </p>
+        
+      </p>
+      
+    </p>
+    
+  </body>
+  
+</html>

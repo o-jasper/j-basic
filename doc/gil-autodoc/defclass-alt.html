@@ -1,0 +1,297 @@
+<html><head><link rel="stylesheet" type="text/css" href=".css"/>
+  </head>
+  <body><p><b>I do not expect this autodoc to fully work yet!
+      </b>
+      
+    </p>
+    <p><a id="item_name"">package
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defpackage_defclass-alt" id="package_title"">defclass-alt
+      </a>
+      <p id="item_body"">Just implements a defclass*
+      </p>
+      <p id="item_body""><a id="item_name"">exports 
+        </a>
+        <a href="nil">*class*-hash*
+        </a>
+        , <a href="nil">c/a
+        </a>
+        , <a href="nil">defclass*
+        </a>
+        , <a href="nil">defclass*+methods
+        </a>
+        , <a href="nil">delist
+        </a>
+        , <a href="nil">derive
+        </a>
+        , <a href="nil">derive-from
+        </a>
+        , <a href="nil">doc
+        </a>
+        , <a href="nil">docs
+        </a>
+        , <a href="nil">el
+        </a>
+        , <a href="nil">elements
+        </a>
+        , <a href="nil">enlist-instance*
+        </a>
+        , <a href="nil">gather-slots
+        </a>
+        , <a href="nil">init
+        </a>
+        , <a href="nil">initarg
+        </a>
+        , <a href="nil">initp
+        </a>
+        , <a href="nil">instance
+        </a>
+        , <a href="nil">methods
+        </a>
+        , <a href="nil">name
+        </a>
+        , <a href="nil">obj
+        </a>
+        , <a href="nil">of
+        </a>
+        , <a href="nil">reader
+        </a>
+        , <a href="nil">ret
+        </a>
+        , <a href="nil">s
+        </a>
+        , <a href="nil">slots
+        </a>
+        , <a href="nil">values-from-instance
+        </a>
+        , <a href="nil">values-from-instance*
+        </a>
+        , <a href="nil">x
+        </a>
+        
+      </p>
+      <p id="item_body""><a id="minor_item_name"">found in file: 
+        </a>
+        <a href="/home/jasper/lisp-proj/j-basic/src/defclass-alt.lisp">/home/jasper/lisp-proj/j-basic/src/defclass-alt.lisp
+        </a>
+        
+      </p>
+      
+    </p>
+    <p><a id="item_name"">variable
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defvar_*class*-hash*" id="var_title"">*class*-hash*
+      </a>
+      <p id="item_body"">Hashtable with the classes.
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_values-from-instance*" id="fun_title"">values-from-instance*
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(class instance &rest values)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Macro version of `values-from-instance`, if in *class*-hash* will check.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">defclass-alt
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_gather-slots" id="fun_name"">gather-slots
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_values-from-instance" id="fun_title"">values-from-instance
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(instance &optional first &rest values)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Gets some of the values from an instance.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">curry
+        </a>
+        </br><a href="nil" id="package_name"">defclass-alt
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_c/a" id="fun_name"">c/a
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_defclass*+methods" id="fun_title"">defclass*+methods
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(name derive-from elements &body methods)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Define a class with `defclass*` and define methods right after.
+      </p>
+      <p id="item_body""><a id="item_name"">uses variables: 
+        </a>
+        <a href="nil" id="package_name"">defclass-alt
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defvar_*class*-hash*" id="var_name"">*class*-hash*
+        </a>
+        </br>
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">defclass-alt
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_gather-slots" id="fun_name"">gather-slots
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_defclass*" id="fun_title"">defclass*
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(name derive-from &rest elements)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Define a class more conveniently.
+an element is in form `name docs &optional type init`
+      </p>
+      <p id="item_body""><a id="item_name"">uses variables: 
+        </a>
+        <a href="nil" id="package_name"">defclass-alt
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defvar_*class*-hash*" id="var_name"">*class*-hash*
+        </a>
+        </br>
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">when-let
+        </a>
+        </br><a href="nil" id="package_name"">defclass-alt
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_gather-slots" id="fun_name"">gather-slots
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_gather-slots" id="fun_title"">gather-slots
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(of &key delist)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Gather all the slots of the class, including what it derives from.
+      </p>
+      <p id="item_body""><a id="item_name"">uses variables: 
+        </a>
+        <a href="nil" id="package_name"">defclass-alt
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defvar_*class*-hash*" id="var_name"">*class*-hash*
+        </a>
+        </br>
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">defclass-alt
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_gather-slots" id="fun_name"">gather-slots
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">generic function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defgeneric_enlist-instance*" id="fun_title"">enlist-instance*
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(obj)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Turns a instance into an assoc-list of its slot.
+      </p>
+      
+    </p>
+    
+  </body>
+  
+</html>

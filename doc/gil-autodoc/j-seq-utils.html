@@ -1,0 +1,503 @@
+<html><head><link rel="stylesheet" type="text/css" href=".css"/>
+  </head>
+  <body><p><b>I do not expect this autodoc to fully work yet!
+      </b>
+      
+    </p>
+    <p><a id="item_name"">package
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defpackage_j-seq-utils" id="package_title"">j-seq-utils
+      </a>
+      <p id="item_body"">Extra functions for sequences.
+      </p>
+      <p id="item_body""><a id="item_name"">exports 
+        </a>
+        <a href="nil">a
+        </a>
+        , <a href="nil">al
+        </a>
+        , <a href="nil">alist
+        </a>
+        , <a href="nil">b
+        </a>
+        , <a href="nil">body
+        </a>
+        , <a href="nil">end
+        </a>
+        , <a href="nil">end1
+        </a>
+        , <a href="nil">end2
+        </a>
+        , <a href="nil">find*
+        </a>
+        , <a href="nil">find*-not
+        </a>
+        , <a href="nil">from-end
+        </a>
+        , <a href="nil">fun
+        </a>
+        , <a href="nil">i
+        </a>
+        , <a href="nil">item
+        </a>
+        , <a href="nil">maptimes
+        </a>
+        , <a href="nil">mt
+        </a>
+        , <a href="nil">n
+        </a>
+        , <a href="nil">name
+        </a>
+        , <a href="nil">names
+        </a>
+        , <a href="nil">one
+        </a>
+        , <a href="nil">onto
+        </a>
+        , <a href="nil">p
+        </a>
+        , <a href="nil">position*
+        </a>
+        , <a href="nil">position*-not
+        </a>
+        , <a href="nil">random-from
+        </a>
+        , <a href="nil">range1
+        </a>
+        , <a href="nil">seq
+        </a>
+        , <a href="nil">seq-eql
+        </a>
+        , <a href="nil">seq-neql
+        </a>
+        , <a href="nil">seq1
+        </a>
+        , <a href="nil">seq2
+        </a>
+        , <a href="nil">set-test
+        </a>
+        , <a href="nil">start
+        </a>
+        , <a href="nil">start1
+        </a>
+        , <a href="nil">start2
+        </a>
+        , <a href="nil">subseq-between
+        </a>
+        , <a href="nil">subseq-upfrom
+        </a>
+        , <a href="nil">subseq-upfrom-not
+        </a>
+        , <a href="nil">subseq-upto
+        </a>
+        , <a href="nil">subseq-upto-not
+        </a>
+        , <a href="nil">test
+        </a>
+        , <a href="nil">v
+        </a>
+        , <a href="nil">vars
+        </a>
+        , <a href="nil">with-assocs
+        </a>
+        
+      </p>
+      <p id="item_body""><a id="minor_item_name"">found in file: 
+        </a>
+        <a href="/home/jasper/lisp-proj/j-basic/src/j-seq-utils.lisp">/home/jasper/lisp-proj/j-basic/src/j-seq-utils.lisp
+        </a>
+        
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_with-assocs" id="fun_title"">with-assocs
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(names alist &body body)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Gets the `cdr` of `assoc` into variables, setf-ably.
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_random-from" id="fun_title"">random-from
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(sequence)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Get element randomly from sequence.
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_seq-neql" id="fun_title"">seq-neql
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(seq1 seq2 &key (test #'eql) (start1 0) (end1 (length seq1)) (start2 0) range1 (end2
+                                                                                (if range1
+                                                                                    (+
+                                                                                     start2
+                                                                                     (-
+                                                                                      end1
+                                                                                      start1))
+                                                                                    (length
+                                                                                     seq2))))
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Inequality of two sequences, returns where  it is unequal in the first one.
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_seq-eql" id="fun_title"">seq-eql
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(seq1 seq2 &key (test #'eql) (start1 0) (end1 (length seq1)) (start2 0) range1 (end2
+                                                                                (if range1
+                                                                                    (+
+                                                                                     start2
+                                                                                     (-
+                                                                                      end1
+                                                                                      start1))
+                                                                                    (length
+                                                                                     seq2))))
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Equality of two sequences.
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_subseq-upfrom-not" id="fun_title"">subseq-upfrom-not
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(item seq &key (start 0) end from-end (one 0))
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Take the subseq upfrom an element belonging to the set _not_ implied by the
+ item.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">if-let
+        </a>
+        </br><a href="nil" id="package_name"">j-seq-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_position*-not" id="fun_name"">position*-not
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_subseq-upfrom" id="fun_title"">subseq-upfrom
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(item seq &key (start 0) end from-end (one 1))
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Take the subseq upfrom an element belonging to the set implied by the item.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">if-let
+        </a>
+        </br><a href="nil" id="package_name"">j-seq-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_position*" id="fun_name"">position*
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_subseq-upto-not" id="fun_title"">subseq-upto-not
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(item seq &key (start 0) end from-end)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Take the subseq upto an element belonging to the set _not_ implied by the item.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">if-let
+        </a>
+        </br><a href="nil" id="package_name"">j-seq-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_position*-not" id="fun_name"">position*-not
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_subseq-upto" id="fun_title"">subseq-upto
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(item seq &key (start 0) end from-end)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Take the subseq upto an element belonging to the set implied by the item.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">if-let
+        </a>
+        </br><a href="nil" id="package_name"">j-seq-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_position*" id="fun_name"">position*
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_find*-not" id="fun_title"">find*-not
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(item seq &key (start 0) end from-end (fun (set-test item)))
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Find position where function/item/element-in-list is not.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">compose
+        </a>
+        , <a href="nil">curry
+        </a>
+        </br><a href="nil" id="package_name"">j-seq-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_find*" id="fun_name"">find*
+        </a>
+        , <a href="defgeneric_set-test">set-test
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_find*" id="fun_title"">find*
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(item seq &key (start 0) end from-end (fun (set-test item)))
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Find position of function/item/element-in-list.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">j-seq-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defgeneric_set-test">set-test
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_position*-not" id="fun_title"">position*-not
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(item seq &key (start 0) end from-end (fun (set-test item)))
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Find position where function/item/element-in-list is not.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">compose
+        </a>
+        , <a href="nil">curry
+        </a>
+        </br><a href="nil" id="package_name"">j-seq-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_position*" id="fun_name"">position*
+        </a>
+        , <a href="defgeneric_set-test">set-test
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_position*" id="fun_title"">position*
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(item seq &key (start 0) end from-end (fun (set-test item)))
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Find position of function/item/element-in-list.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">j-seq-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defgeneric_set-test">set-test
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_maptimes" id="fun_title"">maptimes
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(n function)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Do function `n` times, listing results. You get the current number as index.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">j-seq-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">mt
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    
+  </body>
+  
+</html>

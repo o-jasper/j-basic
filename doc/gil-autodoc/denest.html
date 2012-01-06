@@ -1,0 +1,390 @@
+<html><head><link rel="stylesheet" type="text/css" href=".css"/>
+  </head>
+  <body><p><b>I do not expect this autodoc to fully work yet!
+      </b>
+      
+    </p>
+    <p><a id="item_name"">package
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defpackage_denest" id="package_title"">denest
+      </a>
+      <p id="item_body"">Macro to denest, remove nestedness of macros
+/functions. Was somewhat of a relevation to me and suprising that this
+ function isn't being screamed from the rooftops. Turns out that macros
+ like iterate might just be trying to fight nestedness.(Mostly)
+
+A few macros are given, some are on keywords and specific to denest, to 
+ save namespace.  They do _exactly_ the same as regular macros however! You
+ can use them with the USE-DENEST macro. The macros supplied in this packageIf
+with non-keyword symbols are exported.
+
+TODO remove some nastyness that might happen if denest is nested with self..
+Can it be done?
+      </p>
+      <p id="item_body""><a id="item_name"">exports 
+        </a>
+        <a href="nil">*do-parallel-hash*
+        </a>
+        , <a href="nil">a
+        </a>
+        , <a href="nil">accumulating
+        </a>
+        , <a href="nil">after
+        </a>
+        , <a href="nil">append-1
+        </a>
+        , <a href="nil">appended
+        </a>
+        , <a href="nil">appending
+        </a>
+        , <a href="nil">args
+        </a>
+        , <a href="nil">b
+        </a>
+        , <a href="nil">before
+        </a>
+        , <a href="nil">best
+        </a>
+        , <a href="nil">besting
+        </a>
+        , <a href="nil">body
+        </a>
+        , <a href="nil">by
+        </a>
+        , <a href="nil">by-name
+        </a>
+        , <a href="nil">change
+        </a>
+        , <a href="nil">changer
+        </a>
+        , <a href="nil">clause
+        </a>
+        , <a href="nil">clauses
+        </a>
+        , <a href="nil">cnt
+        </a>
+        , <a href="nil">col-sym
+        </a>
+        , <a href="nil">col-until
+        </a>
+        , <a href="nil">col-var
+        </a>
+        , <a href="nil">collect
+        </a>
+        , <a href="nil">collected
+        </a>
+        , <a href="nil">collecting
+        </a>
+        , <a href="nil">def-do-parallel
+        </a>
+        , <a href="nil">delist
+        </a>
+        , <a href="nil">denest
+        </a>
+        , <a href="nil">denest-top
+        </a>
+        , <a href="nil">do-1
+        </a>
+        , <a href="nil">do-parallel
+        </a>
+        , <a href="nil">do-until
+        </a>
+        , <a href="nil">do-vars
+        </a>
+        , <a href="nil">expand
+        </a>
+        , <a href="nil">forms
+        </a>
+        , <a href="nil">from
+        </a>
+        , <a href="nil">hash
+        </a>
+        , <a href="nil">i
+        </a>
+        , <a href="nil">init
+        </a>
+        , <a href="nil">initial
+        </a>
+        , <a href="nil">intermediate
+        </a>
+        , <a href="nil">iter-var
+        </a>
+        , <a href="nil">maximizing
+        </a>
+        , <a href="nil">minimizing
+        </a>
+        , <a href="nil">name
+        </a>
+        , <a href="nil">onto
+        </a>
+        , <a href="nil">operation
+        </a>
+        , <a href="nil">ret
+        </a>
+        , <a href="nil">summing
+        </a>
+        , <a href="nil">sym-mac
+        </a>
+        , <a href="nil">sym-macs
+        </a>
+        , <a href="nil">to
+        </a>
+        , <a href="nil">top-block
+        </a>
+        , <a href="nil">until
+        </a>
+        , <a href="nil">valuator
+        </a>
+        , <a href="nil">var
+        </a>
+        , <a href="nil">while
+        </a>
+        , <a href="nil">without-let
+        </a>
+        , <a href="nil">x
+        </a>
+        
+      </p>
+      <p id="item_body""><a id="minor_item_name"">found in file: 
+        </a>
+        <a href="/home/jasper/lisp-proj/j-basic/src/denest.lisp">/home/jasper/lisp-proj/j-basic/src/denest.lisp
+        </a>
+        
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_do-1" id="fun_title"">do-1
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(clause &body body)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Iterates over one thing.
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_do-parallel" id="fun_title"">do-parallel
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>((&rest clauses) &body body)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Iterate various ways in parallel.
+      </p>
+      <p id="item_body""><a id="item_name"">uses variables: 
+        </a>
+        <a href="nil" id="package_name"">denest
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defvar_*do-parallel-hash*" id="var_name"">*do-parallel-hash*
+        </a>
+        </br>
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">with-gensyms
+        </a>
+        </br><a href="nil" id="package_name"">denest
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">collecting
+        </a>
+        , <a href="nil">denest
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_minimizing" id="fun_title"">minimizing
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>((&optional (initial 0) (min (gensym))) &body body)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Minimized a number. WARNING, TODO can get rid of initial?
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_maximizing" id="fun_title"">maximizing
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>((&optional (initial 0) (max (gensym))) &body body)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Maximizes a number. WARNING, TODO can get rid of initial?
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_besting" id="fun_title"">besting
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>((valuator &key intermediate initial (best (gensym)) (by-name 'besting)
+  (changer (gensym))) &body body)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Find best variant of something using function.
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_collecting" id="fun_title"">collecting
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>((&key (init '(list)) (onto (gensym)) (collect 'collecting) (append 'appending)
+  (last (gensym)) (append-1 (gensym)) (ret t)) &body body)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Collect everything asked to, return result. (Also, appending)
+If you want to use two different collectings, you need to provide the
+ collect argument.(To avoid namespace collision, and to separate the two.)
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_summing" id="fun_title"">summing
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>((&key (initial 0) (onto (gensym)) (by-name 'summing) without-let) &body body)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Sum everything asked to, return result.
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_accumulating" id="fun_title"">accumulating
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>((initial onto operation &optional (by-name 'accumulating) without-let) &body body)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Alter a variable with an operation, each time accumulation is called,
+ return the result.
+Multiple accumulations need to go by different names.
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_after" id="fun_title"">after
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(after &body before)
+          </b>
+          
+        </p>
+        
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_denest" id="fun_title"">denest
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(&rest forms)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Un-nests stuff, reconstructs macros in order with the body at the end.
+Best and easiest description is:
+ (defmacro denest (&rest args)
+   (if (null (cdr args))
+     (car args)
+     `(,@(car args)
+       (denest ,@(cdr args)))))
+All the actual version also does is provide a top block.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">denest
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">expand
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    
+  </body>
+  
+</html>

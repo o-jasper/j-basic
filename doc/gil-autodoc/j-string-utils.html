@@ -1,0 +1,488 @@
+<html><head><link rel="stylesheet" type="text/css" href=".css"/>
+  </head>
+  <body><p><b>I do not expect this autodoc to fully work yet!
+      </b>
+      
+    </p>
+    <p><a id="item_name"">package
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defpackage_j-string-utils" id="package_title"">j-string-utils
+      </a>
+      <p id="item_body"">Some basic stuff for strings.
+      </p>
+      <p id="item_body""><a id="item_name"">exports 
+        </a>
+        <a href="nil">allow-list
+        </a>
+        , <a href="nil">b
+        </a>
+        , <a href="nil">body
+        </a>
+        , <a href="nil">c
+        </a>
+        , <a href="nil">ch
+        </a>
+        , <a href="nil">clauses
+        </a>
+        , <a href="nil">concat
+        </a>
+        , <a href="nil">concat-list
+        </a>
+        , <a href="nil">concat-princ
+        </a>
+        , <a href="nil">concat-princ-list
+        </a>
+        , <a href="nil">el
+        </a>
+        , <a href="nil">end-str=
+        </a>
+        , <a href="nil">eql-to
+        </a>
+        , <a href="nil">handle-clause
+        </a>
+        , <a href="nil">handle-condition
+        </a>
+        , <a href="nil">keys-from-string
+        </a>
+        , <a href="nil">line
+        </a>
+        , <a href="nil">line-by-line
+        </a>
+        , <a href="nil">np
+        </a>
+        , <a href="nil">p
+        </a>
+        , <a href="nil">p2
+        </a>
+        , <a href="nil">result
+        </a>
+        , <a href="nil">rev-case
+        </a>
+        , <a href="nil">s
+        </a>
+        , <a href="nil">sequences
+        </a>
+        , <a href="nil">ss
+        </a>
+        , <a href="nil">start-str=
+        </a>
+        , <a href="nil">stop
+        </a>
+        , <a href="nil">stop-at-string
+        </a>
+        , <a href="nil">str
+        </a>
+        , <a href="nil">string-case
+        </a>
+        , <a href="nil">string-rev-case
+        </a>
+        , <a href="nil">tokenize-modulo-quoted
+        </a>
+        , <a href="nil">tokenize-str
+        </a>
+        , <a href="nil">upto-n
+        </a>
+        , <a href="nil">wh
+        </a>
+        , <a href="nil">with-line-by-line
+        </a>
+        , <a href="nil">with-stream-generalized
+        </a>
+        
+      </p>
+      <p id="item_body""><a id="minor_item_name"">found in file: 
+        </a>
+        <a href="/home/jasper/lisp-proj/j-basic/src/j-string-utils.lisp">/home/jasper/lisp-proj/j-basic/src/j-string-utils.lisp
+        </a>
+        
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_string-case" id="fun_title"">string-case
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(str &body clauses)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Basic implementation of string cases.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">with-gensyms
+        </a>
+        </br><a href="nil" id="package_name"">j-string-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">handle-condition
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_rev-case" id="fun_title"">rev-case
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(string)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Use `string-rev-case` instead.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">j-string-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_string-rev-case" id="fun_name"">string-rev-case
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_string-rev-case" id="fun_title"">string-rev-case
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(string)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Reverse the case of a string.
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_with-line-by-line" id="fun_title"">with-line-by-line
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(stream (line) &body body)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Macro version of `line-by-line`, gives you `read-line` in sequence.
+Use second value non-nil to stop.(Otherwise to end of stream.)
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_line-by-line" id="fun_title"">line-by-line
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(stream function)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Pass line by line in stream/string.
+Runs until second value non-nil or end of stream.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">j-string-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_line-by-line" id="fun_name"">line-by-line
+        </a>
+        , <a href="nil">with-stream-generalized
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">macro
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defmacro_with-stream-generalized" id="fun_title"">with-stream-generalized
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(stream &body body)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">'Generalize' the stream, turns pathnames, strings into streams for you.
+`stream` _must_ be a variable.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">with-gensyms
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_keys-from-string" id="fun_title"">keys-from-string
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(string &optional (package keyword))
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Turn the tokenized elements of a string into symbols.(default: keywords)
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">j-string-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_tokenize-str" id="fun_name"">tokenize-str
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_tokenize-str" id="fun_title"">tokenize-str
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(string &optional (stop-at-string ) (wh #'wh) (upto-n -2))
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Tokenizes string.
+TODO from lib? 
+TODO bit poor choice of optional arguments, keywords would be better.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">if-let
+        </a>
+        , <a href="nil">when-let
+        </a>
+        </br><a href="nil" id="package_name"">j-seq-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_position*" id="fun_name"">position*
+        </a>
+        , <a href="defun_position*-not" id="fun_name"">position*-not
+        </a>
+        </br><a href="nil" id="package_name"">j-string-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_tokenize-str" id="fun_name"">tokenize-str
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_concat-princ" id="fun_title"">concat-princ
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(&rest sequence)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">&rest version of concat-princ-list.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">j-string-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_concat-princ-list" id="fun_name"">concat-princ-list
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_concat-princ-list" id="fun_title"">concat-princ-list
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(sequence)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Print the elements into strings and concatenate them.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">j-string-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_concat-list" id="fun_name"">concat-list
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_concat" id="fun_title"">concat
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(&rest sequences)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">&rest version of concat-list.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">j-string-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_concat-list" id="fun_name"">concat-list
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_concat-list" id="fun_title"">concat-list
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(sequences)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Append all the strings in the list;
+ `(apply (curry #'concatenate 'string) sequences)`
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">curry
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_end-str=" id="fun_title"">end-str=
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(str eql-to)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">string= at the end of the string.
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_start-str=" id="fun_title"">start-str=
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(str eql-to)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">string= the first argument upto the length of the second argument.
+      </p>
+      
+    </p>
+    
+  </body>
+  
+</html>

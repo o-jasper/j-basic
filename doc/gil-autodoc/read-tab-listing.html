@@ -1,0 +1,225 @@
+<html><head><link rel="stylesheet" type="text/css" href=".css"/>
+  </head>
+  <body><p><b>I do not expect this autodoc to fully work yet!
+      </b>
+      
+    </p>
+    <p><a id="item_name"">package
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defpackage_read-tab-listing" id="package_title"">read-tab-listing
+      </a>
+      <p id="item_body"">Reading and writing nested lists using indentation, and
+ conversion between s/m-expressions.
+
+Note that it can't do two consecutive lists, m-expressions are a bit of a
+ work-around, but that it cannot do expressions without arguments.
+
+Made initially to read the output if the wireless internet connection lister,
+ iwlist.
+
+TODO allow it to screen out comments.
+      </p>
+      <p id="item_body""><a id="item_name"">exports 
+        </a>
+        <a href="nil">change
+        </a>
+        , <a href="nil">comment-p
+        </a>
+        , <a href="nil">comment-start
+        </a>
+        , <a href="nil">cur
+        </a>
+        , <a href="nil">cur-d
+        </a>
+        , <a href="nil">d
+        </a>
+        , <a href="nil">data-start
+        </a>
+        , <a href="nil">el
+        </a>
+        , <a href="nil">first-string
+        </a>
+        , <a href="nil">hook
+        </a>
+        , <a href="nil">i
+        </a>
+        , <a href="nil">input
+        </a>
+        , <a href="nil">k
+        </a>
+        , <a href="nil">line
+        </a>
+        , <a href="nil">m-to-s-expr
+        </a>
+        , <a href="nil">mapwhile
+        </a>
+        , <a href="nil">r
+        </a>
+        , <a href="nil">read-tab-listing
+        </a>
+        , <a href="nil">rl
+        </a>
+        , <a href="nil">s-to-m-expr
+        </a>
+        , <a href="nil">str
+        </a>
+        , <a href="nil">tab-d
+        </a>
+        , <a href="nil">write-tab-listing
+        </a>
+        , <a href="nil">wsd
+        </a>
+        
+      </p>
+      <p id="item_body""><a id="minor_item_name"">found in file: 
+        </a>
+        <a href="/home/jasper/lisp-proj/j-basic/src/read-tab-listing.lisp">/home/jasper/lisp-proj/j-basic/src/read-tab-listing.lisp
+        </a>
+        
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_write-tab-listing" id="fun_title"">write-tab-listing
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(list &key (stream *standard-output*) (d 0) (step 2) (format ~S~%))
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Use whitespace to indicate how the lists are listed.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">read-tab-listing
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_write-tab-listing" id="fun_name"">write-tab-listing
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_read-tab-listing" id="fun_title"">read-tab-listing
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(stream &key (tab-d 4) (hook #'identity) first-string m-to-s-expr comment-start (comment-p
+                                                                                 (if comment-start
+                                                                                     (lambda
+                                                                                         (line)
+                                                                                       (unless
+                                                                                           (<
+                                                                                            (length
+                                                                                             line)
+                                                                                            (length
+                                                                                             comment-start))
+                                                                                         (string=
+                                                                                          line
+                                                                                          comment-start
+                                                                                          end1
+                                                                                          (length
+                                                                                           comment-start))))
+                                                                                     (constantly
+                                                                                      nil))))
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Reads a level of deeper listing for deeper levels of tabbing/spacing.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">read-tab-listing
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">data-start
+        </a>
+        , <a href="defun_m-to-s-expr" id="fun_name"">m-to-s-expr
+        </a>
+        , <a href="defun_mapwhile" id="fun_name"">mapwhile
+        </a>
+        , <a href="nil">rl
+        </a>
+        , <a href="nil">wsd
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_s-to-m-expr" id="fun_title"">s-to-m-expr
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(list)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Turn m to s-expressions.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">read-tab-listing
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_s-to-m-expr" id="fun_name"">s-to-m-expr
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_m-to-s-expr" id="fun_title"">m-to-s-expr
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(list)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Turn 'm-expressions' to s-expressions. 
+Useful with read-tab-listing.
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">read-tab-listing
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="defun_m-to-s-expr" id="fun_name"">m-to-s-expr
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    
+  </body>
+  
+</html>
