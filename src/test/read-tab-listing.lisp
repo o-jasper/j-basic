@@ -1,11 +1,18 @@
-;;TODO apparently package-project of expression-hook doesn't catch that it is a test-package.
+;;
+;;  Copyright (C) 06-01-2012 Jasper den Ouden.
+;;
+;;  This is free software: you can redistribute it and/or modify
+;;  it under the terms of the GNU General Public License as published
+;;  by the Free Software Foundation, either version 3 of the License, or
+;;  (at your option) any later version.
+;;
 
 (defpackage :test-read-tab-listing
   (:use :common-lisp :gen-expr :read-tab-listing)
   (:export test)
   (:documentation "Uses :gen-expr to generate expressions of the subset that can\
  be unabiguously read as tab-listing(those with at least one argument), then\
- writes to string and reads it, checking equality."))
+ writes to string and reads it, checking equality. (Bijection test)"))
 
 (in-package :test-read-tab-listing)
 

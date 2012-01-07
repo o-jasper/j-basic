@@ -1,8 +1,17 @@
-;;TODO apparently package-project of expression-hook doesn't catch that it is a test-package.
+;;
+;;  Copyright (C) 06-01-2012 Jasper den Ouden.
+;;
+;;  This is free software: you can redistribute it and/or modify
+;;  it under the terms of the GNU General Public License as published
+;;  by the Free Software Foundation, either version 3 of the License, or
+;;  (at your option) any later version.
+;;
 
 (defpackage :test-j-string-utils
   (:use :common-lisp :alexandria :j-string-utils :j-seq-utils :j-general)
-  (:export ))
+  (:export test-tokenize test-search)
+  (:documentation
+   "Currently bijection-tests for random generated `detokenize`. (And `cl:search`)"))
 
 (in-package :test-j-string-utils)
 

@@ -1,8 +1,16 @@
-;;TODO apparently package-project of expression-hook doesn't catch that it is a test-package.
+;;
+;;  Copyright (C) 06-01-2012 Jasper den Ouden.
+;;
+;;  This is free software: you can redistribute it and/or modify
+;;  it under the terms of the GNU General Public License as published
+;;  by the Free Software Foundation, either version 3 of the License, or
+;;  (at your option) any later version.
+;;
 
 (defpackage :test-j-parse-number
   (:use :common-lisp :j-parse-number)
-  (:export test))
+  (:export test)
+  (:documentation "Bijection-tests parsing numbers on random generated input."))
 
 (in-package :test-j-parse-number)
 
