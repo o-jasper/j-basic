@@ -29,3 +29,5 @@
 	    (assert (equalp read expr) nil
 		    "Failed to read exactly at(~a) expr,read~%~s~%~s" 
 		    k expr read)))))))
+
+;(test)

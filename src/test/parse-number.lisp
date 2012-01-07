@@ -18,5 +18,5 @@
 (dotimes (k 100)
   (test :fr -732525325.0 :to 71213532532.0))
 
-(parse-number "-2352.35" :dot #\.)
+(assert (= (parse-number "-2352.35" :dot #\.) -2352.35d0))
  
