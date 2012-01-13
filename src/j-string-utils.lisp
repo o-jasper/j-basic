@@ -112,11 +112,14 @@ TODO bit poor choice of optional arguments, keywords would be better."
   "Pass line by line in stream/string.\
 Runs until second value non-nil or end of stream."
   (with-stream-generalized stream
-    (let ((line (read-line stream nil :eof)))
-      (unless (eql line :eof)
-	(multiple-value-bind (result stop) (funcall function line)
-	  (unless stop
-	    (cons result (line-by-line stream function))))))))
+    (let ((list nil))
+      (do () (nil nil)
+	(let ((line (read-line stream nil :eof)))
+	  (when (eql line :eof) (return))
+	  (multiple-value-bind (result stop) (funcall function line)
+	    (when stop (return))
+	    (push result list))))
+      (nreverse list))))
 
 (defmacro with-line-by-line (stream (line) &body body)
   "Macro version of `line-by-line`, gives you `read-line` in sequence.
