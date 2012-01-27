@@ -15,5 +15,5 @@ TODO remove some nastyness that might happen if denest is nested with self..
 Can it be done?"
     :license "GPLv3"
   :serial t
-  :components ((:module "src"
+  :components ((:module "../src"
                  :components ((:file "denest")))))

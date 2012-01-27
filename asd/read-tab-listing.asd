@@ -13,5 +13,5 @@ Made initially to read the output if the wireless internet connection lister,
 TODO allow it to screen out comments."
     :license "GPLv3"
   :serial t
-  :components ((:module "src"
+  :components ((:module "../src"
                  :components ((:file "read-tab-listing")))))

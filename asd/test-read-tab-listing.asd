@@ -6,5 +6,5 @@
  writes to string and reads it, checking equality. (Bijection test)"
     :license "GPLv3"
   :serial t
-  :components ((:module "src"
+  :components ((:module "../src"
                  :components ((:file "read-tab-listing")))))

@@ -14,5 +14,5 @@ NOTE 1) there is cl-ppcre too, how do they compare? Can i make it up to the
  results?"
     :license "GPLv3"
   :serial t
-  :components ((:module "src"
+  :components ((:module "../src"
                  :components ((:file "regex-sequence")))))
