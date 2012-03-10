@@ -1,3 +1,5 @@
+;;DEPRECIATED
+
 ;;
 ;;  Copyright (C) 27-01-2012 Jasper den Ouden.
 ;;
@@ -10,7 +12,8 @@
 (defpackage :regex-sequence
   (:use :common-lisp :regex)
   (:export regex-list regex-subdivide destructuring-regex)
-  (:documentation "Provides `destructuring-regex`, and using regex on lists of\
+  (:documentation "DEPRECIATED
+Provides `destructuring-regex`, and using regex on lists of\
  strings, allowing you to get integers marking the positiions, or the strings\
  matches.
 

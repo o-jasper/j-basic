@@ -42,8 +42,9 @@
 (defun concat-princ-list (sequence)
   (declare (type list sequence))
   "Print the elements into strings and concatenate them."
-  (concat-list (map 'list (lambda (el) (if (stringp el) el (princ-to-string el)))
-		    sequence)))
+  (concat-list
+   (map 'list (lambda (el) (if (stringp el) el (princ-to-string el)))
+	sequence)))
 
 (defun concat-princ (&rest sequence)
   "&rest version of concat-princ-list."
@@ -52,7 +53,8 @@
 (defun wh (ch)
   (case ch ((#\Space #\Newline) t)))
 
-(defun tokenize-str (string &optional (stop-at-string "") (wh #'wh) (upto-n -2))
+(defun tokenize-str
+    (string &optional (stop-at-string "") (wh #'wh) (upto-n -2))
   "Tokenizes string.
 TODO from lib? 
 TODO bit poor choice of optional arguments, keywords would be better."
@@ -64,10 +66,11 @@ TODO bit poor choice of optional arguments, keywords would be better."
       (if (or (= p 0) (string= ss stop-at-string))
 	  rest (cons ss rest)))
     (if (string= string "") (list) (list string))))
-
-(defun tokenize-modulo-quoted (str)
+#|
+ (defun tokenize-modulo-quoted (str)
   "Tokenize, but keep together quoted with \" bits. TODO probably has bugs.."
-  (if-let (p (position* (lambda (ch) (case ch ((#\" #\Space #\Tab #\Newline) t)))
+  (if-let (p (position* (lambda (ch)
+			  (case ch ((#\" #\Space #\Tab #\Newline) t)))
 			str))
     (cons (subseq str 0 p)
 	  (case (elt str p)
@@ -80,7 +83,7 @@ TODO bit poor choice of optional arguments, keywords would be better."
 	     (tokenize-modulo-quoted
 	      (subseq-upfrom-not #'wh (subseq str p) :one 0)))))
     (list str)))
-
+|#
 (defun keys-from-string (string &optional (package :keyword))
   "Turn the tokenized elements of a string into symbols.(default: keywords)"
   (mapcar (lambda (str) (intern (string-upcase str) package))

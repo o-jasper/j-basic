@@ -1,3 +1,4 @@
+;;DEPRECIATED
 
 (defsystem :regex-sequence
   :depends-on (:regex)
