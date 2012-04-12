@@ -9,6 +9,6 @@ Also provides a way of extending it and a concept that should have come with
  the Common Lisp language or a standard or at least widely used library;
  `parse-type` and `regex-string-of-type`"
   :serial t
-  :license "GPLv3"
+  :author "Jasper den Ouden"
   :components ((:module "../src"
                  :components ((:file "destructuring-regex")))))

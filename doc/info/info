@@ -1,2 +1,12 @@
 
+:author "Jasper den Ouden"
 :asd-license "GPLv3"
+:package-info 
+((:vector-vect    :license ("Public domain" "public-domain-header.txt"))
+ (:gen-expr       :license ("Public domain" "public-domain-header.txt"))
+ (:j-general      :license ("Public domain" "public-domain-header.txt"))
+ (:j-string-utils :license ("Public domain" "public-domain-header.txt"))
+ (:j-seq-utils    :license ("Public domain" "public-domain-header.txt"))
+ (:j-parse-number :license ("Public domain" "public-domain-header.txt"))
+ (:denest         :license ("Public domain" "public-domain-header.txt"))
+ (:defclass-alt   :license ("Public domain" "public-domain-header.txt")))

@@ -11,12 +11,18 @@
       <a name="defpackage_j-string-utils" id="package_title"">j-string-utils
       </a>
       <p id="item_body"">Some basic stuff for strings.
+ (connected to other projects, not good for general library use unless you're
+ willing to suffer changes.)
       </p>
       <p id="item_body""><a id="item_name"">exports 
         </a>
         <a href="nil">allow-list
         </a>
+        , <a href="nil">assert-match
+        </a>
         , <a href="nil">b
+        </a>
+        , <a href="nil">block-name
         </a>
         , <a href="nil">body
         </a>
@@ -26,6 +32,8 @@
         </a>
         , <a href="nil">clauses
         </a>
+        , <a href="nil">closer
+        </a>
         , <a href="nil">concat
         </a>
         , <a href="nil">concat-list
@@ -33,6 +41,10 @@
         , <a href="nil">concat-princ
         </a>
         , <a href="nil">concat-princ-list
+        </a>
+        , <a href="nil">cont
+        </a>
+        , <a href="nil">cur-string
         </a>
         , <a href="nil">el
         </a>
@@ -44,17 +56,39 @@
         </a>
         , <a href="nil">handle-condition
         </a>
+        , <a href="nil">have
+        </a>
+        , <a href="nil">i
+        </a>
+        , <a href="nil">if-return-from
+        </a>
+        , <a href="nil">if-returned
+        </a>
+        , <a href="nil">ignore-end
+        </a>
+        , <a href="nil">ignore-start
+        </a>
+        , <a href="nil">input
+        </a>
+        , <a href="nil">k
+        </a>
+        , <a href="nil">keep-ignore-p
+        </a>
         , <a href="nil">keys-from-string
         </a>
         , <a href="nil">line
         </a>
         , <a href="nil">line-by-line
         </a>
+        , <a href="nil">maybe-string
+        </a>
+        , <a href="nil">n
+        </a>
         , <a href="nil">np
         </a>
         , <a href="nil">p
         </a>
-        , <a href="nil">p2
+        , <a href="nil">read-comment
         </a>
         , <a href="nil">result
         </a>
@@ -64,7 +98,11 @@
         </a>
         , <a href="nil">sequences
         </a>
+        , <a href="nil">singlets
+        </a>
         , <a href="nil">ss
+        </a>
+        , <a href="nil">start
         </a>
         , <a href="nil">start-str=
         </a>
@@ -72,19 +110,27 @@
         </a>
         , <a href="nil">stop-at-string
         </a>
+        , <a href="nil">stop-while-open
+        </a>
         , <a href="nil">str
         </a>
         , <a href="nil">string-case
         </a>
         , <a href="nil">string-rev-case
         </a>
-        , <a href="nil">tokenize-modulo-quoted
+        , <a href="nil">tkz
+        </a>
+        , <a href="nil">tokenize
         </a>
         , <a href="nil">tokenize-str
         </a>
         , <a href="nil">upto-n
         </a>
+        , <a href="nil">var
+        </a>
         , <a href="nil">wh
+        </a>
+        , <a href="nil">white
         </a>
         , <a href="nil">with-line-by-line
         </a>
@@ -94,7 +140,7 @@
       </p>
       <p id="item_body""><a id="minor_item_name"">found in file: 
         </a>
-        <a href="/home/jasper/lisp-proj/j-basic/src/j-string-utils.lisp">/home/jasper/lisp-proj/j-basic/src/j-string-utils.lisp
+        <a href="/home/jasper/proj/common-lisp/j-basic/src/j-string-utils.lisp">/home/jasper/proj/common-lisp/j-basic/src/j-string-utils.lisp
         </a>
         
       </p>
@@ -289,6 +335,55 @@ Runs until second value non-nil or end of stream.
       </a>
       <a id="item_name""> 
       </a>
+      <a name="defun_tokenize" id="fun_title"">tokenize
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(input &key (white (format nil ~%~t )) (stop ) stop-while-open (singlets ) (ignore-start
+                                                                            ) (ignore-end
+                                                                               ) (start
+                                                                                  0) (open
+                                                                                      ) (close
+                                                                                         ) (assert-match
+                                                                                            t) keep-ignore-p)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">Tokenizes a stream, `white` indicate what is considered whitespace,
+`open` and `close` are characters that open/close sublists.
+`stop` indicates what characters indicate you should stop. `stop-while-open` 
+indicates if to also stop while open.(defaultly not)
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">alexandria.0.dev
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">when-let
+        </a>
+        </br><a href="nil" id="package_name"">j-string-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">cont
+        </a>
+        , <a href="nil">maybe-string
+        </a>
+        , <a href="nil">read-comment
+        </a>
+        , <a href="nil">tkz
+        </a>
+        </br>
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
       <a name="defun_tokenize-str" id="fun_title"">tokenize-str
       </a>
       <p id="item_body""><p><a id="item_name"">arguments: 
@@ -300,7 +395,7 @@ Runs until second value non-nil or end of stream.
         
       </p>
       <p id="item_body"">Tokenizes string.
-TODO from lib? 
+TODO from lib? TODO phase this guy out.
 TODO bit poor choice of optional arguments, keywords would be better.
       </p>
       <p id="item_body""><a id="item_name"">uses functions: 

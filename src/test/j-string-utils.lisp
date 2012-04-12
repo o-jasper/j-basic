@@ -1,5 +1,5 @@
 ;;
-;;  Copyright (C) 27-01-2012 Jasper den Ouden.
+;;  Copyright (C) 12-03-2012 Jasper den Ouden.
 ;;
 ;;  This is free software: you can redistribute it and/or modify
 ;;  it under the terms of the GNU General Public License as published
@@ -19,21 +19,23 @@
   (typecase (car list)
     (string (concat (car list) " " (detokenize (cdr list))))
     (null   "")
-    (list   (concat "\"" (detokenize (car list)) "\" " (detokenize (cdr list))))))
+    (list   (concat "\"" (detokenize (car list)) "\" "
+		    (detokenize (cdr list))))))
 
 (defun random-str (&optional (len (+ 2 (random 5))))
   (coerce (maptimes len (constantly* (random-from "abcdefghijklmnopqrstuvwxyz")))
 	  'string))
 
-(defun test-tokenize (&key (n 100) (m 10))
+(defun test-tokenize (&key (n 100) (m 10) (tokenizer-fun #'tokenize-str))
   "Test plain tokenizing"
   (dotimes (k n)
     (let*((list (maptimes (random 10) (constantly* (random-str))))
 	  (str  (detokenize list)))
-      (assert (equalp (tokenize-str str) list) nil
+      (assert (equalp (funcall tokenizer-fun str) list) nil
 	      "Test failed on: ~a != ~a (~a)" list (tokenize-str str) str))))
 
 (test-tokenize)
+(test-tokenize :tokenizer-fun #'tokenize)
     
 (defun test-search (&key (n 100))
   "used to have a `locate` command, but now use cl:search, didn't feel like\

@@ -11,18 +11,36 @@
       <a name="defpackage_j-seq-utils" id="package_title"">j-seq-utils
       </a>
       <p id="item_body"">Extra functions for sequences.
+ (connected to other projects, not good for general library use unless you're
+ willing to suffer changes.)
       </p>
       <p id="item_body""><a id="item_name"">exports 
         </a>
         <a href="nil">a
         </a>
+        , <a href="nil">after
+        </a>
         , <a href="nil">al
         </a>
         , <a href="nil">alist
         </a>
+        , <a href="nil">allow-p
+        </a>
         , <a href="nil">b
         </a>
         , <a href="nil">body
+        </a>
+        , <a href="nil">cont
+        </a>
+        , <a href="nil">cont-after
+        </a>
+        , <a href="nil">cont-sub
+        </a>
+        , <a href="nil">cur-end
+        </a>
+        , <a href="nil">cur-start
+        </a>
+        , <a href="nil">el
         </a>
         , <a href="nil">end
         </a>
@@ -33,6 +51,8 @@
         , <a href="nil">find*
         </a>
         , <a href="nil">find*-not
+        </a>
+        , <a href="nil">found
         </a>
         , <a href="nil">from-end
         </a>
@@ -66,6 +86,8 @@
         </a>
         , <a href="nil">range1
         </a>
+        , <a href="nil">ret
+        </a>
         , <a href="nil">seq
         </a>
         , <a href="nil">seq-eql
@@ -80,9 +102,15 @@
         </a>
         , <a href="nil">start
         </a>
+        , <a href="nil">start-end
+        </a>
         , <a href="nil">start1
         </a>
         , <a href="nil">start2
+        </a>
+        , <a href="nil">sub
+        </a>
+        , <a href="nil">sublisting-tokens
         </a>
         , <a href="nil">subseq-between
         </a>
@@ -93,6 +121,8 @@
         , <a href="nil">subseq-upto
         </a>
         , <a href="nil">subseq-upto-not
+        </a>
+        , <a href="nil">sw
         </a>
         , <a href="nil">test
         </a>
@@ -106,9 +136,38 @@
       </p>
       <p id="item_body""><a id="minor_item_name"">found in file: 
         </a>
-        <a href="/home/jasper/lisp-proj/j-basic/src/j-seq-utils.lisp">/home/jasper/lisp-proj/j-basic/src/j-seq-utils.lisp
+        <a href="/home/jasper/proj/common-lisp/j-basic/src/j-seq-utils.lisp">/home/jasper/proj/common-lisp/j-basic/src/j-seq-utils.lisp
         </a>
         
+      </p>
+      
+    </p>
+    <p><a id="item_name"">function
+      </a>
+      <a id="item_name""> 
+      </a>
+      <a name="defun_sublisting-tokens" id="fun_title"">sublisting-tokens
+      </a>
+      <p id="item_body""><p><a id="item_name"">arguments: 
+          </a>
+          <b>(list start-end &key cur-start (cur-end (cdr (assoc cur-start start-end))) allow-p)
+          </b>
+          
+        </p>
+        
+      </p>
+      <p id="item_body"">The given things in start-end are used to make sublists. The starter is
+ used to indicate which it is. TODO move to j-basic; j-seq-utils
+      </p>
+      <p id="item_body""><a id="item_name"">uses functions: 
+        </a>
+        <a href="nil" id="package_name"">j-seq-utils
+        </a>
+        <a id="package_name"">: 
+        </a>
+        <a href="nil">sw
+        </a>
+        </br>
       </p>
       
     </p>
@@ -170,7 +229,8 @@
         </p>
         
       </p>
-      <p id="item_body"">Inequality of two sequences, returns where  it is unequal in the first one.
+      <p id="item_body"">Inequality of two sequences, returns where  it is unequal in the first
+ one.
       </p>
       
     </p>
@@ -214,8 +274,8 @@
         </p>
         
       </p>
-      <p id="item_body"">Take the subseq upfrom an element belonging to the set _not_ implied by the
- item.
+      <p id="item_body"">Take the subseq upfrom an element belonging to the set _not_ implied by
+ the item.
       </p>
       <p id="item_body""><a id="item_name"">uses functions: 
         </a>
@@ -249,7 +309,8 @@
         </p>
         
       </p>
-      <p id="item_body"">Take the subseq upfrom an element belonging to the set implied by the item.
+      <p id="item_body"">Take the subseq upfrom an element belonging to the set implied by the
+ item.
       </p>
       <p id="item_body""><a id="item_name"">uses functions: 
         </a>
@@ -283,7 +344,8 @@
         </p>
         
       </p>
-      <p id="item_body"">Take the subseq upto an element belonging to the set _not_ implied by the item.
+      <p id="item_body"">Take the subseq upto an element belonging to the set _not_ implied by the
+ item.
       </p>
       <p id="item_body""><a id="item_name"">uses functions: 
         </a>
@@ -483,7 +545,8 @@
         </p>
         
       </p>
-      <p id="item_body"">Do function `n` times, listing results. You get the current number as index.
+      <p id="item_body"">Do function `n` times, listing results. You get the current number as
+ index. (loopless has something like it.)
       </p>
       <p id="item_body""><a id="item_name"">uses functions: 
         </a>
