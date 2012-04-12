@@ -13,7 +13,9 @@
 	   *class*-hash* gather-slots
 	   values-from-instance values-from-instance*
 	   defclass*+methods)
-  (:documentation "Just implements a defclass*"))
+  (:documentation "Just implements a defclass*
+ (Now barely)connected to other projects, not good for general library use\
+ unless you're willing to suffer changes."))
 
 (in-package :defclass-alt)
 
@@ -31,7 +33,7 @@
     (symbol (gather-slots (gethash of *class*-hash*) :delist delist))
     (t      (let ((ret (destructuring-bind (derive &rest slots) of
 			 (remove-if #'stringp
-				(append slots (mapcan #'gather-slots derive))))))
+			   (append slots (mapcan #'gather-slots derive))))))
 	      (if delist (mapcar #'delist ret) ret)))))
 
 

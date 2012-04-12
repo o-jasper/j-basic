@@ -28,7 +28,11 @@ A few macros are given, some are on keywords and specific to denest, to \
 with non-keyword symbols are exported.
 
 TODO remove some nastyness that might happen if denest is nested with self..
-Can it be done?"))
+Can it be done?
+
+Note: i hardly use it myself!! Better not use it.
+TODO suggest improved ones of these to loopless? Particularly the\
+ accumulators."))
 
 (in-package :denest)
 

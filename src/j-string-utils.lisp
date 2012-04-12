@@ -11,11 +11,13 @@
   (:use :common-lisp :alexandria :j-seq-utils)
   (:export start-str= end-str= 
 	   concat-list concat  concat-princ-list concat-princ
-	   tokenize-str; tokenize-modulo-quoted
+	   tokenize tokenize-str; tokenize-modulo-quoted
 	   keys-from-string
 	   with-stream-generalized line-by-line with-line-by-line
 	   rev-case string-rev-case string-case)
-  (:documentation "Some basic stuff for strings."))
+  (:documentation "Some basic stuff for strings.
+ (connected to other projects, not good for general library use unless you're\
+ willing to suffer changes.)"))
 
 (in-package :j-string-utils)
 
@@ -56,7 +58,7 @@
 (defun tokenize-str
     (string &optional (stop-at-string "") (wh #'wh) (upto-n -2))
   "Tokenizes string.
-TODO from lib? 
+TODO from lib? TODO phase this guy out.
 TODO bit poor choice of optional arguments, keywords would be better."
   (if-let (p (when (/= upto-n 0) (position* wh string)))
     (let*((rest (when-let (np (position*-not wh string :start p))
@@ -66,24 +68,76 @@ TODO bit poor choice of optional arguments, keywords would be better."
       (if (or (= p 0) (string= ss stop-at-string))
 	  rest (cons ss rest)))
     (if (string= string "") (list) (list string))))
-#|
- (defun tokenize-modulo-quoted (str)
-  "Tokenize, but keep together quoted with \" bits. TODO probably has bugs.."
-  (if-let (p (position* (lambda (ch)
-			  (case ch ((#\" #\Space #\Tab #\Newline) t)))
-			str))
-    (cons (subseq str 0 p)
-	  (case (elt str p)
-	    (#\"
-	     (if-let (p2 (position #\" str :start (+ p 1)))
-	       (cons (subseq str p p2) 
-		     (tokenize-modulo-quoted (subseq str (+ p2 1))))
-	       (list (subseq str p))))
-	    ((#\Space #\Tab #\Newline)
-	     (tokenize-modulo-quoted
-	      (subseq-upfrom-not #'wh (subseq str p) :one 0)))))
-    (list str)))
-|#
+
+(defmacro if-return-from (block-name &body (if-returned))
+  (with-gensyms (var)
+    `(when-let (,var ,if-returned) (return-from ,block-name ,var))))
+
+;;TODO all the things that work on characters now should work on strings.
+(defun tokenize (input &key (white (format nil "~%~T ")) 
+		 (stop "") stop-while-open (singlets "") 
+		 (ignore-start "") (ignore-end "") 
+		 (start 0)
+		 (open "") (close "") (assert-match t)
+		 keep-ignore-p)
+  "Tokenizes a stream, `white` indicate what is considered whitespace,
+`open` and `close` are characters that open/close sublists.
+`stop` indicates what characters indicate you should stop. `stop-while-open` 
+indicates if to also stop while open.(defaultly not)"
+  (labels
+      ((maybe-string (cur-string n)
+	 (unless (= n 0) 
+	   (let ((have (get-output-stream-string cur-string)))
+	     (unless (string= have "") (list have)))))
+       (cont (stream cur-string closer n)
+	 `(,@(maybe-string cur-string n)
+	   ,@(tkz stream closer)))
+       (read-comment (stream)
+	 (with-output-to-string (s)
+	   (do ((ch (read-char stream nil :eof) 
+		    (read-char stream nil :eof)))
+	       ((find (read-char stream nil :eof) ignore-end) nil)
+	     (write-char ch s))))
+       (tkz (stream closer)
+	 (with-output-to-string (cur-string)
+	   (do ((ch (read-char stream nil :eof) (read-char stream nil :eof))
+		(n 0 (+ n 1)))
+	       (nil nil)
+	     (cond ;Stop for stopping characters (maybe)unless nested.
+	       ((or (when (find ch stop) (or stop-while-open (= closer -1)))
+		    (eql ch :eof))
+		(return-from tkz (maybe-string cur-string n)))
+	       ((find ch white) ;Skip over 'white' characters.
+		(return-from tkz (cont stream cur-string closer n)))
+	       ((find ch ignore-start) ;Skip until you see the end.
+		(when keep-ignore-p
+		  (return-from tkz 
+		    `((,keep-ignore-p ,(read-comment stream))
+		      ,@(cont stream cur-string closer n))))
+		(do () ((find (read-char stream nil :eof) ignore-end) nil))
+		(return-from tkz (cont stream cur-string closer n)))
+	       ((find ch singlets) ;Enter 'singlets as single characters.
+		(return-from tkz 
+		  `(,@(maybe-string cur-string n)
+		    ,ch
+		    ,@(tkz stream closer))))
+	       (t
+		(or (when-let (i (position ch open))
+		      (return-from tkz `(,@(maybe-string cur-string n)
+				  ,(cons ch (tkz stream i))
+				  ,@(tkz stream closer))))
+		    (when-let (i (position ch close))
+		      (assert (or (not assert-match) (= i closer)))
+		      (return-from tkz (maybe-string cur-string n))))))
+	   ;'just some character', put it in the string. 
+	   ; (That is what al the `return-froms` are for..)
+	     (write-char ch cur-string)))))
+    (typecase input
+      (stream (dotimes (k start) (read-char input nil nil)) 
+	      (tkz input -1))
+      (string (with-input-from-string (s (subseq input start)) (tkz s -1)))
+      (t      (error "tokenize currently only does strings and streams.")))))
+
 (defun keys-from-string (string &optional (package :keyword))
   "Turn the tokenized elements of a string into symbols.(default: keywords)"
   (mapcar (lambda (str) (intern (string-upcase str) package))
