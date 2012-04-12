@@ -11,11 +11,11 @@ consists of:
 * symbols, the value entered is whatever is between other matching
 * strings is skip to a match, dont record the match 
   (but maybe record what is between)
-* (string symbol) go to match and put it in the variable.
+* (symbol string) go to match and put it in the variable.
 * (symbol symbol) figure out a regular expression from the symbol using 
   `(regex-string-of-type type-symbol)`, and then parse it with 
   `(parse-type type-symbol string)` and put that in variable.
-* `(:if-mismatch ..body..)` what to do if mismatch.
+* `(:if-mismatch ..body..)`, `(t ..body..)` what to do if mismatch.
 
 There is also a `regex-case` which picks the first matching 
 `destructuring-regex` form. (Note that it is conceptually a little different 

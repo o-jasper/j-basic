@@ -32,8 +32,8 @@ If keyword `stop` true, the first mismatch stops the process."
 	  (cond ((not (stringp cur)) ;Assumes it is a compiled regex.
 		 (scan-str cur string :start start))
 		((string= cur "")
-		 (values t start 0))
-		((or (string= cur "(") (string= cur ")"));TODO this does what? 
+		 (values t start 0)) ;TODO this does what? 
+		((or (string= cur "(") (string= cur ")"))
 		 (let ((i (search cur string)))
 		   (when i (values t i 1))))
 		(t
@@ -156,7 +156,7 @@ Note: If you make 'types' indicated by symbols you 'dont own', symbols do not\
 		     ,@(if vars (list (dr (car vars) (cdr vars) new-i body 
 					  if-mismatch))
 			        body)))))
-	     ((cons (eql :if-mismatch) list)
+	     ((cons (or (eql t) (eql :if-mismatch)) list)
 	      (dr (car vars) (cdr vars) i body (cdr var) between))
 	     ((cons symbol (cons symbol null)) ;Match with associated regex.
 	      (destructuring-bind (var type) var
@@ -182,7 +182,7 @@ Note: If you make 'types' indicated by symbols you 'dont own', symbols do not\
 		       (declare (ignorable ,var)) ;TODO all ignorable
 		       ,(dr (car vars) (cdr vars) new-i body if-mismatch))
 		     ,if-mismatch))))
-	     ((cons string (cons string null))
+	     ((cons string (cons symbol null))
 	      (error "This looks like the old way of writing destructuring\
  regex, types now go _after_ variables.(makes more sense in case things are\
  expanded later."))
