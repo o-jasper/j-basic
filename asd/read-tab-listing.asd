@@ -1,6 +1,5 @@
 
 (defsystem :read-tab-listing
-  :depends-on ()
   :description "Reading and writing nested lists using indentation, and
  conversion between s/m-expressions.
 
@@ -11,7 +10,7 @@ Made initially to read the output if the wireless internet connection lister,
  iwlist.
 
 TODO allow it to screen out comments."
-    :license "GPLv3"
   :serial t
+  :author "Jasper den Ouden"
   :components ((:module "../src"
                  :components ((:file "read-tab-listing")))))
