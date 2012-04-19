@@ -1,6 +1,6 @@
 
 (defsystem :gen-expr
-  :depends-on (:alexandria)
+  :depends-on (:j-seq-utils :alexandria)
   :description "Generates random expressions for data to test on."
   :serial t
   :license "Public domain"

@@ -1,24 +1,15 @@
 ;;
-;;  Copyright (C) 12-04-2012 Jasper den Ouden.
+;;  Copyright (C) 19-04-2012 Jasper den Ouden.
 ;;  Placed in public domain. Do with it what you want, all 
 ;;   responsibilities by use and modification are yours.
 ;;
 
 (defpackage :gen-expr
-  (:use :common-lisp :alexandria)
+  (:use :common-lisp :alexandria :j-seq-utils)
   (:export gen-expr)
   (:documentation "Generates random expressions for data to test on."))
 
 (in-package :gen-expr)
-
-(defun random-from (list)
-  "Get random file from the list."
-  (nth (random (length list)) list))
-
-(defun maptimes (fun n)
-  "Run function n times, listing the output.(n as argument.)"
-  (when (> n 0)
-    (cons (funcall fun) (maptimes fun (- n 1)))))
 
 (defconstant +from-symbols+ 
   '(a b c d e f g h i j k l m n o p q r s t u v w x y z)
@@ -36,21 +27,21 @@
      (gen-val (lambda ()
 		(case (random 2)
 		  (0 (random 10.0)) (1 (random 10))))))
-  "Creates valid statements if the functions exist and don't care about the number\
- of arguments."
+  "Creates valid statements if the functions exist and don't care about the\
+ number of arguments."
   (labels
       ((ge (&optional environment (depth 0) (r (random 1d0)))
-	 (cond
-	   ((and environment (\= var-prob 0) (< r var-prob)) ;Generate variable.
+	 (cond ;Generate variable.
+	   ((and environment (\= var-prob 0) (< r var-prob))
 	    (random-from environment))
 	   ((or (< r val-lower) (>= depth max-depth)) ;Generate value.
 	    (funcall gen-val))
-	   ((and (\= fun-prob 0) (< r fun-lower))
-	    (let ((args (maptimes gen-var (funcall arg-count))))
+	   ((and (\= fun-prob 0) (< r fun-lower)) ;Generate lambda statement
+	    (let ((args (maptimes (funcall arg-count) gen-var)))
 	      `(lambda ,args
 		 ,(ge (union environment args) (+ depth 1)))))
 	   (t ;Generate function.
 	    (cons (funcall gen-fun)
-		  (maptimes (curry #'ge environment (+ depth 1)) 
-			    (funcall arg-count)))))))
+		  (maptimes (funcall arg-count)
+			    (curry #'ge environment (+ depth 1)) ))))))
     (ge environment)))

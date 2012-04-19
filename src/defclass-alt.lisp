@@ -44,8 +44,9 @@ an element is in form `name docs &optional type init`"
 	   (lambda (el)
 	     (typecase el
 	       (list
-		(destructuring-bind (name docs &optional type (init nil initp)
-				     &key (reader :default) (initarg :default))
+		(destructuring-bind
+		      (name docs &optional type (init nil initp)
+			    &key (reader :default) (initarg :default))
 		    el
 		  `((,name ,@(typecase reader 
 			       ((eql :default) `(:reader ,name))
